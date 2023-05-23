@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root{
+    --c1: #002515;
+    --c2: #00FFA3;
+    --c3: #9D9D9D;
+    --c4: #013620;
+    --c5: #037B57;
+    --c6: #757877;
+    --c7: #BCFFE6;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+.displayNone{
+    display: none;
+}
+
+.displayHidden{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.wrapper{
+    background: linear-gradient(var(--c1),var(--c2));
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo-row svg{
+    width: 180px;
+    cursor: pointer;
+}
+
+/* input row  */
+.input-row{
+    justify-content: left;
+    width: 60vw;
+}
+
+#input-url{
+    width: 100%;
+    padding: 15px;
+    padding-left: 20px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: var(--c5);
+}
+
+#input-url::placeholder{
+    color: var(--c3);
+}
+
+input[type="submit"]{
+    width: 150px;
+    height: 100%;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--c4);
+    color: white;
+    font-size: 20px;
+}
+
+input[type="submit"]:hover{
+    background-color: var(--c1);
+
+}
+
+.input-field{
+    flex-grow: 1;
+    margin-right: 10px;
+}
+.input-btn-row{
+    display: flex;   
+}
+
+/* result row */
+.result-row{
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--c7);
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+.short-url-container{
+    display: flex;
+    align-items: center;
+}
+
+#shorten-url{
+    font-size: 30px;
+    color: var(--c5);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+#shorten-url:hover{
+    text-decoration: underline;
+    color: var(--c4);
+}
+
+.short-url-head{
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    color: var(--c5);
+    cursor: pointer;
+}
+
+.short-url-head:hover{
+    color: var(--c4);
+}
+
+.short-url-row{
+    background-color: white;
+    margin-top: 2%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    align-items: center;
+}
+
+.copy-url{
+    margin-left: 10px;
+    margin-top: 3px;
+    opacity: 30%;
+    cursor: pointer;
+}
+
+.copy-url:hover{
+    opacity: 100%;
+
+}
+.copy-url:hover svg path{
+    opacity: 100%;
+    stroke: var(--c5);
+}
+
+/* original url */
+.original-url-container{
+    color: var(--c3);
+    padding: 20px 30px;
+}
+.original-url-head{
+    font-size: 15px;
+    line-height: 1;
+}
+
+.original-url-url a{
+    font-size: 18px;
+    text-decoration: none;
+    color: var(--c3);
+}
+
+.original-url-container:hover .original-url-head{
+    color: var(--c4);
+}
+.original-url-container:hover .original-url-url a{
+    text-decoration: underline;
+    color: var(--c4);
+}
+
+/* footer */
+.footer{
+    position: absolute;
+    bottom: 50px;
+    font-size: 14px;
+    margin: auto;
+}
+.footer a{
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--c1);
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+
+@media (max-width:870px){
+    #input-url{
+        font-size: 15px;
+    }
+    .logo-row{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .input-btn-row{
+        flex-direction: column;
+    }
+    .short-btn{
+        margin-top: 5px;
+        height: 60px;
+    }
+    #short-btn-btn{
+        width: 100%;
+    }
+    .input-field{
+        margin: 0;
+    }
+    .short-url-row{
+        flex-direction: column-reverse;
+    }
+    .short-url-head{
+        font-size: 15px;
+    }
+    #shorten-url{
+        font-size: 26px;
+    }
+    #original-url{
+        font-size: 13px;
+    }
+    .original-url-container{
+        text-align: center;
+    }
+}
+
+@media (max-width:1042px){
+    .short-url-head{
+        font-size: 20px;
+    }
+    #shorten-url{
+        font-size: 23px;
+    }
+}
+@media (max-width:600px){
+    .short-url-head{
+        font-size: 16px;
+    }
+    #shorten-url{
+        font-size: 15px;
+    }
+    #original-url{
+        font-size: 11px;
+    }
+    .footer{
+        width: 60%;
+        text-align: center;
+    }
+}
